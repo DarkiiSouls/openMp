@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OpenMp", "OpenMp\OpenMp.vcxproj", "{743CE63F-F65F-44A2-BA75-6BAD793AB20C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{743CE63F-F65F-44A2-BA75-6BAD793AB20C}.Debug|x64.ActiveCfg = Debug|x64
+		{743CE63F-F65F-44A2-BA75-6BAD793AB20C}.Debug|x64.Build.0 = Debug|x64
+		{743CE63F-F65F-44A2-BA75-6BAD793AB20C}.Debug|x86.ActiveCfg = Debug|Win32
+		{743CE63F-F65F-44A2-BA75-6BAD793AB20C}.Debug|x86.Build.0 = Debug|Win32
+		{743CE63F-F65F-44A2-BA75-6BAD793AB20C}.Release|x64.ActiveCfg = Release|x64
+		{743CE63F-F65F-44A2-BA75-6BAD793AB20C}.Release|x64.Build.0 = Release|x64
+		{743CE63F-F65F-44A2-BA75-6BAD793AB20C}.Release|x86.ActiveCfg = Release|Win32
+		{743CE63F-F65F-44A2-BA75-6BAD793AB20C}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {24CB6D88-98DF-4E87-9926-E457F1859B95}
+	EndGlobalSection
+EndGlobal
