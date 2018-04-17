@@ -13,7 +13,7 @@ void selectionSort1(int ilgi[], int n,  int bas[])
 	clock_t t1, t2;
 
 	t1 = clock();
-#pragma omp parallel for num_threads(16)
+
 	for (int x = 0; x < n - 1; x++)
 	{
 		struct Compare min;
@@ -27,7 +27,7 @@ void selectionSort1(int ilgi[], int n,  int bas[])
 			min.index = y;
 		}
 
-		int temp = ilgi[x];
+		/*int temp = ilgi[x];
 		ilgi[x] = min.val;
 		ilgi[min.index] = temp;
 
@@ -35,14 +35,14 @@ void selectionSort1(int ilgi[], int n,  int bas[])
 
 		int temp2 = bas[x];
 		bas[x] = bas[min.index];
-		bas[min.index] = temp2;
+		bas[min.index] = temp2;*/
 		
 	}
 	t2 = clock();
 
 	double total_clock;
 	total_clock = t2 - t1;
-	cout << endl << "Kucukten ilgi " << total_clock << "mm" << endl;
+	cout << endl << "Normal " << total_clock << " ms" << endl;
 	
 
 }
@@ -52,7 +52,7 @@ void selectionSort2(int ilgi[], int n, int bas[])
 	clock_t t1, t2;
 
 	t1 = clock();
-#pragma omp parallel for num_threads(3)
+#pragma omp parallel for num_threads(10)
 	for (int x = 0; x<n - 1; x++)
 	{
 		int iMin = x;
@@ -61,7 +61,7 @@ void selectionSort2(int ilgi[], int n, int bas[])
 			if (ilgi[y] > ilgi[iMin])
 				iMin = y;
 		}
-		int temp = ilgi[x];
+		/*int temp = ilgi[x];
 		ilgi[x] = ilgi[iMin];
 		ilgi[iMin] = temp;
 
@@ -69,86 +69,86 @@ void selectionSort2(int ilgi[], int n, int bas[])
 
 		int temp2 = bas[x];
 		bas[x] = bas[iMin];
-		bas[iMin] = temp2;
+		bas[iMin] = temp2;*/
 	}
 	t2 = clock();
 
 	double total_clock;
 	total_clock = t2 - t1;
-	cout << endl << "Buyukten ilgi " << total_clock << "mm" << endl;
+	cout << endl << "Parallar " << total_clock << " ms" << endl;
 	
 }
-
-void selectionSort3(int ilgi[], int n,  int bas[])
-{
-	clock_t t1, t2;
-
-	t1 = clock();
-#pragma omp parallel for num_threads(3)
-	for (int x = 0; x<n - 1; x++)
-	{
-		int iMin = x;
-		for (int y = x + 1; y < n; y++)
-		{
-			if (bas[y] < bas[iMin])
-				iMin = y;
-		}
-		int temp = ilgi[x];
-		ilgi[x] = ilgi[iMin];
-		ilgi[iMin] = temp;
-
-		
-
-		int temp2 = bas[x];
-		bas[x] = bas[iMin];
-		bas[iMin] = temp2;
-	}
-	t2 = clock();
-
-	double total_clock;
-	total_clock = t2 - t1;
-	cout << endl <<"Kucukten bas " << total_clock << "mm" << endl;
-	
-}
-
-void selectionSort4(int ilgi[], int n,  int bas[])
-{
-	clock_t t1, t2;
-
-	t1 = clock();
-#pragma omp parallel for num_threads(3)
-	for (int x = 0; x<n - 1; x++)
-	{
-		int iMin = x;
-		for (int y = x + 1; y < n; y++)
-		{
-			if (bas[y] > bas[iMin])
-				iMin = y;
-		}
-		int temp = ilgi[x];
-		ilgi[x] = ilgi[iMin];
-		ilgi[iMin] = temp;
-
-		
-
-		int temp2 = bas[x];
-		bas[x] = bas[iMin];
-		bas[iMin] = temp2;
-	}
-	t2 = clock();
-
-	double total_clock;
-	total_clock = t2 - t1;
-	cout << endl << "Buyukten bas " << total_clock << "mm" << endl;
-
-}
+//
+//void selectionSort3(int ilgi[], int n,  int bas[])
+//{
+//	clock_t t1, t2;
+//
+//	t1 = clock();
+//#pragma omp parallel for num_threads(4)
+//	for (int x = 0; x<n - 1; x++)
+//	{
+//		int iMin = x;
+//		for (int y = x + 1; y < n; y++)
+//		{
+//			if (bas[y] < bas[iMin])
+//				iMin = y;
+//		}
+//		int temp = ilgi[x];
+//		ilgi[x] = ilgi[iMin];
+//		ilgi[iMin] = temp;
+//
+//		
+//
+//		int temp2 = bas[x];
+//		bas[x] = bas[iMin];
+//		bas[iMin] = temp2;
+//	}
+//	t2 = clock();
+//
+//	double total_clock;
+//	total_clock = t2 - t1;
+//	cout << endl <<"Kucukten bas " << total_clock << " ms" << endl;
+//	
+//}
+//
+//void selectionSort4(int ilgi[], int n,  int bas[])
+//{
+//	clock_t t1, t2;
+//
+//	t1 = clock();
+//
+//	for (int x = 0; x<n - 1; x++)
+//	{
+//		int iMin = x;
+//		for (int y = x + 1; y < n; y++)
+//		{
+//			if (bas[y] > bas[iMin])
+//				iMin = y;
+//		}
+//		int temp = ilgi[x];
+//		ilgi[x] = ilgi[iMin];
+//		ilgi[iMin] = temp;
+//
+//		
+//
+//		int temp2 = bas[x];
+//		bas[x] = bas[iMin];
+//		bas[iMin] = temp2;
+//	}
+//	t2 = clock();
+//
+//	double total_clock;
+//	total_clock = t2 - t1;
+//	cout << endl << "Buyukten bas " << total_clock << " ms" << endl;
+//
+//}
 int main()
 {
 
-	const unsigned int s = 100000;
+	const unsigned int s = 30000;
 	clock_t t1, t2;
+	clock_t t3, t4;
 	
-	t1 = clock();
 	
 	int ilgi[s] ;
 
@@ -164,22 +164,31 @@ int main()
 		bas[i] = rond;
 
 	}
-	
-	selectionSort1(ilgi, size(ilgi), bas);
-
-	
-	selectionSort2(ilgi, size(ilgi), bas);
-
-
-	selectionSort3(ilgi, size(ilgi), bas);
-
-	selectionSort4(ilgi, size(ilgi), bas);
-
+	t1 = clock();
+	for (int i = 0; i < 10; i++) {
+		selectionSort1(ilgi, size(ilgi), bas);
+	}
 	t2 = clock();
-
 	double total_clock;
-	total_clock = t2 - t1;
-	cout << endl << "Total time " << total_clock << "mm"<< endl;
+	total_clock = (t2 - t1)/10;
+	cout << endl << "Total time for Normal " << total_clock << " ms" << endl;
+
+
+	t3 = clock();
+	for (int i = 0; i < 10; i++) {
+		selectionSort2(ilgi, size(ilgi), bas);
+	}
+	t4 = clock();
+	double total_clock1;
+	total_clock1 = (t4 - t3) / 10;
+	cout << endl << "Total time for Parallar " << total_clock1 << " ms" << endl;
+	/*selectionSort3(ilgi, size(ilgi), bas);
+
+	selectionSort4(ilgi, size(ilgi), bas);*/
+
+	
+
+	
 	getchar();
 	return 0;
 }
