@@ -75,7 +75,7 @@ void selectionSort2(int ilgi[], int n, int bas[])
 
 	double total_clock;
 	total_clock = t2 - t1;
-	cout << endl << "Parallar 4 Core" << total_clock << " ms" << endl;
+	cout << endl << "Parallar 4 Core " << total_clock << " ms" << endl;
 	
 }
 void selectionSort3(int ilgi[], int n, int bas[])
@@ -106,7 +106,7 @@ void selectionSort3(int ilgi[], int n, int bas[])
 
 	double total_clock;
 	total_clock = t2 - t1;
-	cout << endl << "Parallar 2 Core" << total_clock << " ms" << endl;
+	cout << endl << "Parallar 2 Core " << total_clock << " ms" << endl;
 
 }
 //
